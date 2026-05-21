@@ -12,30 +12,24 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:76px}
-
   .topbar{background:var(--orange);color:#fff;padding:16px 20px 12px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
   .topbar h1{font-size:1.1rem;font-weight:700}
   .topbar p{font-size:0.72rem;opacity:.85;margin-top:2px}
   .refresh{background:rgba(255,255,255,.2);border:none;color:#fff;border-radius:8px;padding:7px 12px;font-size:.8rem;font-weight:600;cursor:pointer}
-
   .nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);display:flex;z-index:10}
   .nb{flex:1;padding:9px 4px 7px;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:.62rem;font-weight:600;color:var(--gray);background:none;border:none;cursor:pointer;line-height:1}
   .nb.active{color:var(--orange)}
   .nb svg{width:21px;height:21px}
-
   .page{display:none;padding:14px 14px}
   .page.active{display:block}
-
   .week-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
   .week-lbl{font-size:.9rem;font-weight:700}
   .wbtns{display:flex;gap:6px}
   .wbtns button{background:#fff;border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-size:.78rem;cursor:pointer}
-
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
   .stat{background:#fff;border:1px solid var(--border);border-radius:12px;padding:11px 8px;text-align:center}
   .snum{font-size:1.5rem;font-weight:800}
   .slbl{font-size:.65rem;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:1px}
-
   .card{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
   .ctop{display:flex;align-items:flex-start;gap:11px;padding:13px 13px;cursor:pointer}
   .circ{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;font-weight:700}
@@ -51,7 +45,6 @@
   .b-gry{background:var(--bg);color:var(--gray)}
   .chev{font-size:.68rem;color:var(--gray);margin-top:3px;transition:transform .2s;flex-shrink:0}
   .card.open .chev{transform:rotate(180deg)}
-
   .instr{display:none;border-top:1px solid var(--border);padding:13px 13px 13px 46px;background:#fafafa}
   .card.open .instr{display:block}
   .ilbl{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray);margin-bottom:8px}
@@ -62,7 +55,6 @@
   .ibody img{max-width:100%;border-radius:8px;margin:6px 0}
   .no-instr{font-style:italic;color:var(--gray);font-size:.81rem}
   .olink{display:inline-block;margin-top:10px;padding:6px 12px;background:var(--orange-bg);color:var(--orange);border-radius:8px;font-size:.76rem;font-weight:700;text-decoration:none}
-
   .grade-card{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:10px;padding:14px}
   .ghdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
   .gcourse{font-size:.85rem;font-weight:700}
@@ -72,7 +64,6 @@
   .gitem{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;padding:5px 0;border-top:1px solid var(--border)}
   .gname{flex:1;margin-right:8px}
   .gpts{font-weight:600;white-space:nowrap}
-
   .flyer{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px}
   .ftitle{font-size:1.05rem;font-weight:800;color:var(--orange);margin-bottom:2px}
   .fsub{font-size:.75rem;color:var(--gray);margin-bottom:14px}
@@ -85,7 +76,6 @@
   .cemoji{font-size:2.8rem;margin-bottom:8px}
   .cmsg{font-size:.95rem;font-weight:700;color:var(--green);margin-bottom:4px}
   .csub{font-size:.8rem;color:var(--gray)}
-
   .loading{text-align:center;padding:50px 20px;color:var(--gray)}
   .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--orange);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px}
   @keyframes spin{to{transform:rotate(360deg)}}
@@ -95,12 +85,10 @@
 </style>
 </head>
 <body>
-
 <div class="topbar">
   <div><h1>📚 My Homework</h1><p id="upd">Loading…</p></div>
   <button class="refresh" onclick="loadAll()">↻ Refresh</button>
 </div>
-
 <div id="page-week" class="page active">
   <div class="week-hdr">
     <div class="week-lbl" id="wlbl">This Week</div>
@@ -117,19 +105,15 @@
   </div>
   <div id="week-list"><div class="loading"><div class="spinner"></div><p>Loading…</p></div></div>
 </div>
-
 <div id="page-all" class="page">
   <div id="all-list"><div class="loading"><div class="spinner"></div><p>Loading…</p></div></div>
 </div>
-
 <div id="page-grades" class="page">
   <div id="grades-list"><div class="loading"><div class="spinner"></div><p>Loading…</p></div></div>
 </div>
-
 <div id="page-flyer" class="page">
   <div id="flyer-cnt"><div class="loading"><div class="spinner"></div><p>Loading…</p></div></div>
 </div>
-
 <nav class="nav">
   <button class="nb active" onclick="sp('week',this)">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -148,127 +132,30 @@
     Flyer
   </button>
 </nav>
-
 <script>
-const CANVAS = 'https://unitechonduras.instructure.com';
-const COLORS = ['#E66000','#3b82f6','#8b5cf6','#16a34a','#f97316','#ec4899','#06b6d4','#f59e0b'];
-
-let assignments=[], courses=[], cmap={}, ccolors={};
+const CANVAS='https://unitechonduras.instructure.com';
+const COLORS=['#E66000','#3b82f6','#8b5cf6','#16a34a','#f97316','#ec4899','#06b6d4','#f59e0b'];
+let assignments=[],courses=[],cmap={},ccolors={};
 let done=new Set(JSON.parse(localStorage.getItem('hw_done')||'[]'));
 let wo=0;
-
-async function api(path) {
-  const r = await fetch('/api/canvas?path='+encodeURIComponent(path));
-  if (!r.ok) throw new Error(r.status+' '+r.statusText);
-  return r.json();
-}
-
-async function loadAll() {
-  setL();
-  try {
-    courses=(await api('/courses?enrollment_state=active&per_page=50&state[]=available')).filter(c=>c.name&&!c.access_restricted_by_date);
-    courses.forEach((c,i)=>{cmap[c.id]=c;ccolors[c.id]=COLORS[i%COLORS.length];});
-    const all=[];
-    for(const c of courses){
-      try{
-        const a=await api('/courses/'+c.id+'/assignments?per_page=100&order_by=due_at&include[]=submission');
-        a.forEach(x=>x._cid=c.id);
-        all.push(...a);
-      }catch(e){}
-    }
-    assignments=all.sort((a,b)=>{
-      if(!a.due_at&&!b.due_at)return 0;
-      if(!a.due_at)return 1;if(!b.due_at)return -1;
-      return new Date(a.due_at)-new Date(b.due_at);
-    });
-    document.getElementById('upd').textContent='Updated '+new Date().toLocaleTimeString()+' · '+courses.length+' courses';
-    renderAll();
-  } catch(e) {
-    const m='<div class="error">⚠️ Could not load Canvas data.<br><small>'+e.message+'</small></div>';
-    ['week-list','all-list','grades-list','flyer-cnt'].forEach(id=>document.getElementById(id).innerHTML=m);
-  }
-}
-
+async function api(path){const r=await fetch('/api/canvas?path='+encodeURIComponent(path));if(!r.ok)throw new Error(r.status+' '+r.statusText);return r.json();}
+async function loadAll(){setL();try{courses=(await api('/courses?enrollment_state=active&per_page=50&state[]=available')).filter(c=>c.name&&!c.access_restricted_by_date);courses.forEach((c,i)=>{cmap[c.id]=c;ccolors[c.id]=COLORS[i%COLORS.length];});const all=[];for(const c of courses){try{const a=await api('/courses/'+c.id+'/assignments?per_page=100&order_by=due_at&include[]=submission');a.forEach(x=>x._cid=c.id);all.push(...a);}catch(e){}}assignments=all.sort((a,b)=>{if(!a.due_at&&!b.due_at)return 0;if(!a.due_at)return 1;if(!b.due_at)return -1;return new Date(a.due_at)-new Date(b.due_at);});document.getElementById('upd').textContent='Updated '+new Date().toLocaleTimeString()+' · '+courses.length+' courses';renderAll();}catch(e){const m='<div class="error">⚠️ Could not load Canvas data.<br><small>'+e.message+'</small></div>';['week-list','all-list','grades-list','flyer-cnt'].forEach(id=>document.getElementById(id).innerHTML=m);}}
 function setL(){const l='<div class="loading"><div class="spinner"></div><p>Loading…</p></div>';['week-list','all-list','grades-list','flyer-cnt'].forEach(id=>document.getElementById(id).innerHTML=l);}
-
 function wb(o){const n=new Date(),d=n.getDay();const m=new Date(n);m.setDate(n.getDate()-((d+6)%7)+o*7);m.setHours(0,0,0,0);const s=new Date(m);s.setDate(m.getDate()+6);s.setHours(23,59,59,999);return{start:m,end:s};}
 function inW(a,s,e){return a.due_at&&new Date(a.due_at)>=s&&new Date(a.due_at)<=e;}
 function cw(t){wo=t===0?0:wo+t;rWeek();rFlyer();}
 function st(a){if(!a.due_at)return'none';const d=(new Date(a.due_at)-new Date())/864e5;return d<0?'overdue':d<1?'today':d<=3?'soon':'upcoming';}
 function bd(s){const m={overdue:'<span class="badge b-red">Overdue</span>',today:'<span class="badge b-ora">Due today</span>',soon:'<span class="badge b-ora">Due soon</span>',upcoming:'<span class="badge b-blu">Upcoming</span>',none:'<span class="badge b-gry">No due date</span>'};return m[s]||m.none;}
 function fd(ds){if(!ds)return'No due date';const d=new Date(ds),df=(d-new Date())/864e5,t=d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});if(df<-1)return Math.abs(Math.ceil(df))+'d overdue';if(df<0)return'Yesterday';if(df<1)return'Today '+t;if(df<2)return'Tomorrow '+t;return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' '+t;}
-
-function cardH(a,showC){
-  const isDone=done.has(a.id),s=isDone?'none':st(a),color=ccolors[a._cid]||'#888',cname=cmap[a._cid]?cmap[a._cid].name:'',hd=a.description&&a.description.trim().length>0,pts=a.points_possible!=null?a.points_possible+' pts':'';
-  return '<div class="card'+(isDone?' done-card':'')+'" id="c'+a.id+'">'
-    +'<div class="ctop" onclick="tog('+a.id+')">'
-      +'<div class="circ'+(isDone?' done':'')+'" onclick="event.stopPropagation();mk('+a.id+')">'+(isDone?'✓':'')+'</div>'
-      +'<div class="cinfo">'
-        +(showC?'<div class="ctag" style="color:'+color+'">'+cname+'</div>':'')
-        +'<div class="ctitle">'+a.name+'</div>'
-        +'<div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:4px">'+bd(s)+(pts?'<span style="font-size:.7rem;color:var(--gray)">'+pts+'</span>':'')+'</div>'
-      +'</div>'
-      +'<div class="chev">▼</div>'
-    +'</div>'
-    +'<div class="instr">'
-      +'<div class="ilbl">Instructions</div>'
-      +'<div class="ibody">'+(hd?a.description:'<span class="no-instr">No instructions provided.</span>')+'</div>'
-      +'<a class="olink" href="'+CANVAS+'/courses/'+a._cid+'/assignments/'+a.id+'" target="_blank">Open in Canvas ↗</a>'
-    +'</div>'
-    +'</div>';
-}
-
+function cardH(a,showC){const isDone=done.has(a.id),s=isDone?'none':st(a),color=ccolors[a._cid]||'#888',cname=cmap[a._cid]?cmap[a._cid].name:'',hd=a.description&&a.description.trim().length>0,pts=a.points_possible!=null?a.points_possible+' pts':'';return'<div class="card'+(isDone?' done-card':'')+'" id="c'+a.id+'"><div class="ctop" onclick="tog('+a.id+')"><div class="circ'+(isDone?' done':'')+'" onclick="event.stopPropagation();mk('+a.id+')">'+(isDone?'✓':'')+'</div><div class="cinfo">'+(showC?'<div class="ctag" style="color:'+color+'">'+cname+'</div>':'')+'<div class="ctitle">'+a.name+'</div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:4px">'+bd(s)+(pts?'<span style="font-size:.7rem;color:var(--gray)">'+pts+'</span>':'')+'</div></div><div class="chev">▼</div></div><div class="instr"><div class="ilbl">Instructions</div><div class="ibody">'+(hd?a.description:'<span class="no-instr">No instructions provided.</span>')+'</div><a class="olink" href="'+CANVAS+'/courses/'+a._cid+'/assignments/'+a.id+'" target="_blank">Open in Canvas ↗</a></div></div>';}
 function tog(id){const el=document.getElementById('c'+id);el&&el.classList.toggle('open');}
 function mk(id){if(done.has(id))done.delete(id);else done.add(id);localStorage.setItem('hw_done',JSON.stringify([...done]));renderAll();}
-
 function renderAll(){rWeek();rAll();rGrades();rFlyer();}
-
-function rWeek(){
-  const{start,end}=wb(wo),fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-  document.getElementById('wlbl').textContent=wo===0?'This Week — '+fmt(start)+' to '+fmt(end):wo===-1?'Last Week — '+fmt(start)+' to '+fmt(end):wo===1?'Next Week — '+fmt(start)+' to '+fmt(end):fmt(start)+' – '+fmt(end);
-  const week=assignments.filter(a=>inW(a,start,end)),tot=week.length,dn=week.filter(a=>done.has(a.id)).length;
-  document.getElementById('st').textContent=tot;document.getElementById('sl').textContent=tot-dn;document.getElementById('sd').textContent=dn;
-  if(!week.length){document.getElementById('week-list').innerHTML='<div class="empty">🎉 No assignments this week!</div>';return;}
-  const g={};week.forEach(a=>{if(!g[a._cid])g[a._cid]=[];g[a._cid].push(a);});
-  let h='';for(const[cid,list]of Object.entries(g)){const c=cmap[cid],col=ccolors[cid]||'#888';h+='<div class="stitle" style="color:'+col+'">'+(c?c.name:cid)+'</div>';list.forEach(a=>h+=cardH(a,false));}
-  document.getElementById('week-list').innerHTML=h;
-}
-
-function rAll(){
-  if(!assignments.length){document.getElementById('all-list').innerHTML='<div class="empty">No assignments found.</div>';return;}
-  const g={};assignments.forEach(a=>{if(!g[a._cid])g[a._cid]=[];g[a._cid].push(a);});
-  let h='';for(const[cid,list]of Object.entries(g)){const c=cmap[cid],col=ccolors[cid]||'#888';h+='<div class="stitle" style="color:'+col+'">'+(c?c.name:cid)+'</div>';list.forEach(a=>h+=cardH(a,false));}
-  document.getElementById('all-list').innerHTML=h;
-}
-
-function rGrades(){
-  if(!courses.length){document.getElementById('grades-list').innerHTML='<div class="empty">No courses found.</div>';return;}
-  let h='';
-  for(const c of courses){
-    const col=ccolors[c.id]||'#888',scored=assignments.filter(a=>a._cid===c.id&&a.submission&&a.submission.score!=null&&a.points_possible),tp=scored.reduce((s,a)=>s+a.points_possible,0),ea=scored.reduce((s,a)=>s+a.submission.score,0),pct=tp?Math.round(ea/tp*100):null;
-    h+='<div class="grade-card"><div class="ghdr"><div class="gcourse">'+c.name+'</div>'+(pct!=null?'<div class="gscore" style="color:'+col+'">'+pct+'%</div>':'<div class="gscore" style="color:var(--gray)">—</div>')+'</div>'+(pct!=null?'<div class="gbar-bg"><div class="gbar-fill" style="width:'+pct+'%;background:'+col+'"></div></div>':'');
-    if(scored.length){scored.slice(-5).reverse().forEach(a=>{const p=Math.round(a.submission.score/a.points_possible*100);h+='<div class="gitem"><span class="gname">'+a.name+'</span><span class="gpts" style="color:'+col+'">'+a.submission.score+'/'+a.points_possible+' ('+p+'%)</span></div>';});}
-    else h+='<div class="gitem" style="color:var(--gray);font-style:italic"><span>No graded work yet</span></div>';
-    h+='</div>';
-  }
-  document.getElementById('grades-list').innerHTML=h;
-}
-
-function rFlyer(){
-  const{start,end}=wb(wo),fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'}),week=assignments.filter(a=>inW(a,start,end)),pending=week.filter(a=>!done.has(a.id)),finished=week.filter(a=>done.has(a.id));
-  let h='<div class="flyer"><div class="ftitle">📋 Weekly Summary</div><div class="fsub">'+fmt(start)+' – '+fmt(end)+'</div>';
-  if(week.length>0&&pending.length===0){h+='<div class="congrats"><div class="cemoji">🎉</div><div class="cmsg">All done this week!</div><div class="csub">Great work — enjoy your time off.</div></div>';}
-  else if(!week.length){h+='<p style="font-style:italic;color:var(--gray);font-size:.82rem">No assignments due this week.</p>';}
-  else{
-    if(pending.length){h+='<div class="fsection"><div class="fstitle">To Do ('+pending.length+')</div>';pending.forEach(a=>{h+='<div class="frow"><span class="fname">'+a.name+'<br><small style="color:var(--gray);font-size:.7rem">'+(cmap[a._cid]?cmap[a._cid].name:'')+'</small></span><span class="fdue">'+fd(a.due_at)+'</span></div>';});h+='</div>';}
-    if(finished.length){h+='<div class="fsection"><div class="fstitle">Completed ✓</div>';finished.forEach(a=>{h+='<div class="frow" style="opacity:.5;text-decoration:line-through"><span class="fname">'+a.name+'</span><span class="fdue">'+fd(a.due_at)+'</span></div>';});h+='</div>';}
-  }
-  h+='</div>';
-  document.getElementById('flyer-cnt').innerHTML=h;
-}
-
+function rWeek(){const{start,end}=wb(wo),fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'});document.getElementById('wlbl').textContent=wo===0?'This Week — '+fmt(start)+' to '+fmt(end):wo===-1?'Last Week — '+fmt(start)+' to '+fmt(end):wo===1?'Next Week — '+fmt(start)+' to '+fmt(end):fmt(start)+' – '+fmt(end);const week=assignments.filter(a=>inW(a,start,end)),tot=week.length,dn=week.filter(a=>done.has(a.id)).length;document.getElementById('st').textContent=tot;document.getElementById('sl').textContent=tot-dn;document.getElementById('sd').textContent=dn;if(!week.length){document.getElementById('week-list').innerHTML='<div class="empty">🎉 No assignments this week!</div>';return;}const g={};week.forEach(a=>{if(!g[a._cid])g[a._cid]=[];g[a._cid].push(a);});let h='';for(const[cid,list]of Object.entries(g)){const c=cmap[cid],col=ccolors[cid]||'#888';h+='<div class="stitle" style="color:'+col+'">'+(c?c.name:cid)+'</div>';list.forEach(a=>h+=cardH(a,false));}document.getElementById('week-list').innerHTML=h;}
+function rAll(){if(!assignments.length){document.getElementById('all-list').innerHTML='<div class="empty">No assignments found.</div>';return;}const g={};assignments.forEach(a=>{if(!g[a._cid])g[a._cid]=[];g[a._cid].push(a);});let h='';for(const[cid,list]of Object.entries(g)){const c=cmap[cid],col=ccolors[cid]||'#888';h+='<div class="stitle" style="color:'+col+'">'+(c?c.name:cid)+'</div>';list.forEach(a=>h+=cardH(a,false));}document.getElementById('all-list').innerHTML=h;}
+function rGrades(){if(!courses.length){document.getElementById('grades-list').innerHTML='<div class="empty">No courses found.</div>';return;}let h='';for(const c of courses){const col=ccolors[c.id]||'#888',scored=assignments.filter(a=>a._cid===c.id&&a.submission&&a.submission.score!=null&&a.points_possible),tp=scored.reduce((s,a)=>s+a.points_possible,0),ea=scored.reduce((s,a)=>s+a.submission.score,0),pct=tp?Math.round(ea/tp*100):null;h+='<div class="grade-card"><div class="ghdr"><div class="gcourse">'+c.name+'</div>'+(pct!=null?'<div class="gscore" style="color:'+col+'">'+pct+'%</div>':'<div class="gscore" style="color:var(--gray)">—</div>')+'</div>'+(pct!=null?'<div class="gbar-bg"><div class="gbar-fill" style="width:'+pct+'%;background:'+col+'"></div></div>':'');if(scored.length){scored.slice(-5).reverse().forEach(a=>{const p=Math.round(a.submission.score/a.points_possible*100);h+='<div class="gitem"><span class="gname">'+a.name+'</span><span class="gpts" style="color:'+col+'">'+a.submission.score+'/'+a.points_possible+' ('+p+'%)</span></div>';});}else h+='<div class="gitem" style="color:var(--gray);font-style:italic"><span>No graded work yet</span></div>';h+='</div>';}document.getElementById('grades-list').innerHTML=h;}
+function rFlyer(){const{start,end}=wb(wo),fmt=d=>d.toLocaleDateString('en-US',{month:'short',day:'numeric'}),week=assignments.filter(a=>inW(a,start,end)),pending=week.filter(a=>!done.has(a.id)),finished=week.filter(a=>done.has(a.id));let h='<div class="flyer"><div class="ftitle">📋 Weekly Summary</div><div class="fsub">'+fmt(start)+' – '+fmt(end)+'</div>';if(week.length>0&&pending.length===0){h+='<div class="congrats"><div class="cemoji">🎉</div><div class="cmsg">All done this week!</div><div class="csub">Great work — enjoy your time off.</div></div>';}else if(!week.length){h+='<p style="font-style:italic;color:var(--gray);font-size:.82rem">No assignments due this week.</p>';}else{if(pending.length){h+='<div class="fsection"><div class="fstitle">To Do ('+pending.length+')</div>';pending.forEach(a=>{h+='<div class="frow"><span class="fname">'+a.name+'<br><small style="color:var(--gray);font-size:.7rem">'+(cmap[a._cid]?cmap[a._cid].name:'')+'</small></span><span class="fdue">'+fd(a.due_at)+'</span></div>';});h+='</div>';}if(finished.length){h+='<div class="fsection"><div class="fstitle">Completed ✓</div>';finished.forEach(a=>{h+='<div class="frow" style="opacity:.5;text-decoration:line-through"><span class="fname">'+a.name+'</span><span class="fdue">'+fd(a.due_at)+'</span></div>';});h+='</div>';}}h+='</div>';document.getElementById('flyer-cnt').innerHTML=h;}
 function sp(n,b){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nb').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+n).classList.add('active');b.classList.add('active');}
-
 loadAll();
 </script>
 </body>
